@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -34,7 +33,7 @@ const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const whatsappNumber = ""; // Número proporcionado por el usuario
-  const contactEmail = "tu-email@ejemplo.com"; // Cambia esto por tu email real
+  const contactEmail = "totalsolucionesco@gmail.com"; // Cambia esto por tu email real
 
   const validateField = (name: string, value: string): string => {
     switch (name) {

@@ -38,7 +38,7 @@ const handler = async (req: Request): Promise<Response> => {
     // Send email to the business owner
     const emailResponse = await resend.emails.send({
       from: "Contacto Web <onboarding@resend.dev>",
-      to: ["tu-email@ejemplo.com"], // Cambia esto por tu email real
+      to: ["totalsolucionesco@gmail.com"],
       subject: `Nuevo mensaje de contacto - ${nombre}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -69,7 +69,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Send confirmation email to the user
     await resend.emails.send({
-      from: "Tu Empresa <onboarding@resend.dev>",
+      from: "Total Soluciones <onboarding@resend.dev>",
       to: [email],
       subject: "¡Hemos recibido tu mensaje!",
       html: `
@@ -98,7 +98,7 @@ const handler = async (req: Request): Promise<Response> => {
               ¡Esperamos poder ayudarte pronto!
             </p>
             <p style="color: #666; margin: 5px 0 0 0; font-size: 14px;">
-              El equipo de desarrollo web
+              El equipo de Total Soluciones
             </p>
           </div>
         </div>
