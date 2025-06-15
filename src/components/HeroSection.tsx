@@ -1,4 +1,5 @@
-import { ArrowRight, Play, CheckCircle2, Sparkles, Laptop, Video } from 'lucide-react';
+
+import { ArrowRight, Play, CheckCircle2, Sparkles, Laptop, Video, Pause, Volume2, Maximize, SkipBack, SkipForward } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const HeroSection = () => {
@@ -81,100 +82,97 @@ const HeroSection = () => {
             </div>
           </div>
           
-          {/* Enhanced Premium Laptop Visual */}
+          {/* Video Player Screen */}
           <div className="relative animate-slide-in-right perspective-container">
             <div className="relative transform-3d">
-              {/* Multiple layered background gradients for depth */}
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/40 to-purple-500/40 rounded-[3rem] blur-3xl transform rotate-6 animate-float scale-110"></div>
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/30 to-indigo-500/30 rounded-[3rem] blur-2xl transform -rotate-3 animate-float scale-105" style={{ animationDelay: '0.5s' }}></div>
-              <div className="absolute inset-0 bg-gradient-to-r from-green-400/20 to-emerald-500/20 rounded-[3rem] blur-xl transform rotate-12 animate-float scale-95" style={{ animationDelay: '1s' }}></div>
+              {/* Background glow effects */}
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/40 to-purple-500/40 rounded-[2rem] blur-3xl transform rotate-3 animate-float scale-110"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/30 to-indigo-500/30 rounded-[2rem] blur-2xl transform -rotate-2 animate-float scale-105" style={{ animationDelay: '0.5s' }}></div>
               
-              {/* Premium laptop container with enhanced design */}
-              <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-[2.5rem] shadow-2xl p-6 z-10 card-3d hover:scale-105 transition-all duration-700 border border-slate-700/50">
-                {/* Laptop lid with Apple-style design */}
-                <div className="bg-gradient-to-br from-slate-800 to-black rounded-t-2xl p-1 mb-2 shadow-inner">
-                  <div className="bg-gradient-to-br from-slate-700 to-slate-900 rounded-t-xl p-6 relative overflow-hidden">
-                    {/* Screen bezel */}
-                    <div className="bg-black rounded-xl p-3 shadow-2xl relative">
-                      {/* Screen content with enhanced video display */}
-                      <div className="bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 rounded-lg p-8 h-64 flex items-center justify-center relative overflow-hidden">
-                        {/* Animated background pattern */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 animate-pulse"></div>
-                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_30%,_rgba(59,130,246,0.1)_70%)] animate-float"></div>
-                        
-                        {/* Central video icon with glow effect */}
-                        <div className="relative z-30 group">
-                          <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full blur-2xl opacity-60 animate-pulse group-hover:opacity-80 transition-opacity"></div>
-                          <Video className="h-28 w-28 text-white relative z-10 animate-pulse drop-shadow-2xl" />
-                          <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/30 to-blue-400/30 rounded-full blur-xl animate-float"></div>
+              {/* Video Player Container */}
+              <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-[2rem] shadow-2xl p-3 z-10 card-3d hover:scale-105 transition-all duration-700 border border-slate-700/50">
+                {/* Video Screen */}
+                <div className="bg-black rounded-2xl p-1 shadow-inner relative overflow-hidden">
+                  {/* Video Content Area */}
+                  <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-black rounded-xl relative aspect-video overflow-hidden">
+                    {/* Video Background with thumbnail effect */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-900/50 via-purple-900/50 to-slate-900">
+                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_40%,_rgba(0,0,0,0.3)_80%)]"></div>
+                      
+                      {/* Simulated video thumbnail */}
+                      <div className="absolute inset-4 bg-gradient-to-br from-blue-800/30 to-purple-800/30 rounded-lg overflow-hidden">
+                        <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
+                        <div className="absolute top-4 left-4 w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg opacity-20"></div>
+                        <div className="absolute top-4 right-4 w-12 h-12 bg-gradient-to-br from-green-500 to-cyan-500 rounded-full opacity-20"></div>
+                        <div className="absolute bottom-4 left-4 w-20 h-8 bg-gradient-to-r from-yellow-500 to-orange-500 rounded opacity-20"></div>
+                      </div>
+                    </div>
+                    
+                    {/* Central Play Button with enhanced design */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="relative group cursor-pointer">
+                        <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-red-600 rounded-full blur-xl opacity-60 animate-pulse group-hover:opacity-80 transition-opacity scale-150"></div>
+                        <div className="relative bg-gradient-to-br from-red-500 via-red-600 to-red-700 rounded-full p-6 shadow-2xl group-hover:scale-110 transition-transform">
+                          <Play className="h-12 w-12 text-white ml-1" fill="white" />
                         </div>
-                        
-                        {/* Enhanced animated UI elements */}
-                        <div className="absolute top-3 left-3 flex gap-2">
-                          <div className="w-3 h-3 bg-gradient-to-r from-red-400 to-red-500 rounded-full animate-pulse shadow-lg"></div>
-                          <div className="w-3 h-3 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full animate-pulse shadow-lg" style={{ animationDelay: '0.3s' }}></div>
-                          <div className="w-3 h-3 bg-gradient-to-r from-green-400 to-green-500 rounded-full animate-pulse shadow-lg" style={{ animationDelay: '0.6s' }}></div>
-                        </div>
-                        
-                        {/* Progress bar */}
-                        <div className="absolute bottom-8 left-6 right-6">
-                          <div className="h-2 bg-slate-700/50 rounded-full overflow-hidden">
-                            <div className="h-full bg-gradient-to-r from-blue-400 to-purple-400 rounded-full animate-pulse w-3/4"></div>
+                      </div>
+                    </div>
+                    
+                    {/* Video Player Controls Overlay */}
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4">
+                      {/* Progress Bar */}
+                      <div className="mb-3">
+                        <div className="h-1.5 bg-white/20 rounded-full overflow-hidden">
+                          <div className="h-full bg-gradient-to-r from-red-500 to-red-600 rounded-full w-1/3 relative">
+                            <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-3 h-3 bg-red-500 rounded-full shadow-lg"></div>
                           </div>
                         </div>
-                        
-                        {/* Floating code particles */}
-                        <div className="absolute top-16 left-8 w-2 h-2 bg-cyan-400 rounded-full animate-bounce-3d opacity-70"></div>
-                        <div className="absolute top-24 right-12 w-1.5 h-1.5 bg-pink-400 rounded-full animate-bounce-3d opacity-70" style={{ animationDelay: '0.4s' }}></div>
-                        <div className="absolute bottom-16 left-12 w-2.5 h-2.5 bg-yellow-400 rounded-full animate-bounce-3d opacity-70" style={{ animationDelay: '0.8s' }}></div>
-                        
-                        {/* Subtle code lines overlay */}
-                        <div className="absolute bottom-12 left-6 right-6 space-y-1 opacity-20">
-                          <div className="h-0.5 bg-white rounded w-4/5 animate-pulse"></div>
-                          <div className="h-0.5 bg-white rounded w-3/5 animate-pulse" style={{ animationDelay: '0.2s' }}></div>
-                          <div className="h-0.5 bg-white rounded w-5/6 animate-pulse" style={{ animationDelay: '0.4s' }}></div>
+                        <div className="flex justify-between text-xs text-white/70 mt-1">
+                          <span>2:45</span>
+                          <span>8:30</span>
                         </div>
+                      </div>
+                      
+                      {/* Control Buttons */}
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-3">
+                          <SkipBack className="h-5 w-5 text-white/80 hover:text-white cursor-pointer transition-colors" />
+                          <div className="bg-white/20 backdrop-blur-sm rounded-full p-2 hover:bg-white/30 transition-colors cursor-pointer">
+                            <Pause className="h-4 w-4 text-white" />
+                          </div>
+                          <SkipForward className="h-5 w-5 text-white/80 hover:text-white cursor-pointer transition-colors" />
+                        </div>
+                        
+                        <div className="flex items-center gap-3">
+                          <div className="flex items-center gap-2">
+                            <Volume2 className="h-4 w-4 text-white/80" />
+                            <div className="w-16 h-1 bg-white/20 rounded-full">
+                              <div className="w-3/4 h-full bg-white rounded-full"></div>
+                            </div>
+                          </div>
+                          <Maximize className="h-4 w-4 text-white/80 hover:text-white cursor-pointer transition-colors" />
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Video Title Overlay */}
+                    <div className="absolute top-4 left-4 right-4">
+                      <div className="bg-black/60 backdrop-blur-sm rounded-lg p-3">
+                        <h3 className="text-white font-semibold text-sm">Demo de Desarrollo Web</h3>
+                        <p className="text-white/70 text-xs">Soluciones tecnológicas profesionales</p>
                       </div>
                     </div>
                   </div>
                 </div>
-                
-                {/* Laptop base with keyboard and trackpad */}
-                <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-b-2xl p-4 shadow-inner">
-                  {/* Enhanced keyboard design */}
-                  <div className="grid grid-cols-14 gap-0.5 mb-4 px-2">
-                    {Array.from({ length: 70 }).map((_, i) => (
-                      <div 
-                        key={i} 
-                        className="h-2 bg-gradient-to-b from-slate-600 to-slate-700 rounded-sm shadow-sm hover:from-slate-500 hover:to-slate-600 transition-colors"
-                        style={{ 
-                          width: i % 14 === 0 || i % 14 === 13 ? '0.75rem' : '0.5rem',
-                          animationDelay: `${i * 0.01}s`
-                        }}
-                      ></div>
-                    ))}
-                  </div>
-                  
-                  {/* Premium trackpad with subtle glow */}
-                  <div className="w-24 h-16 bg-gradient-to-br from-slate-600 to-slate-700 rounded-xl mx-auto shadow-inner relative">
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-xl animate-pulse"></div>
-                  </div>
-                </div>
               </div>
               
-              {/* Large background laptop icon with better positioning */}
-              <div className="absolute inset-0 flex items-center justify-center opacity-5 z-0 scale-150">
-                <Laptop className="h-96 w-96 text-slate-600 animate-float" style={{ animationDelay: '1.5s' }} />
+              {/* Floating UI elements around the video player */}
+              <div className="absolute -top-4 -left-4 w-8 h-8 bg-gradient-to-br from-red-500 to-red-600 rounded-full animate-bounce-3d shadow-xl flex items-center justify-center">
+                <Video className="h-4 w-4 text-white" />
               </div>
-              
-              {/* Enhanced floating elements with better gradients */}
-              <div className="absolute -top-6 -left-6 w-10 h-10 bg-gradient-to-br from-yellow-400 via-orange-400 to-red-400 rounded-full animate-bounce-3d shadow-2xl"></div>
-              <div className="absolute -top-4 -right-8 w-8 h-8 bg-gradient-to-br from-pink-400 via-rose-400 to-red-500 rounded-full animate-bounce-3d shadow-2xl" style={{ animationDelay: '0.3s' }}></div>
-              <div className="absolute -bottom-6 -left-8 w-12 h-12 bg-gradient-to-br from-green-400 via-emerald-400 to-cyan-400 rounded-full animate-bounce-3d shadow-2xl" style={{ animationDelay: '0.6s' }}></div>
-              <div className="absolute -bottom-4 -right-6 w-9 h-9 bg-gradient-to-br from-purple-400 via-indigo-400 to-blue-500 rounded-full animate-bounce-3d shadow-2xl" style={{ animationDelay: '0.9s' }}></div>
-              
-              {/* Additional ambient light effects */}
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-2xl animate-float" style={{ animationDelay: '2s' }}></div>
+              <div className="absolute -top-2 -right-6 w-6 h-6 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full animate-bounce-3d shadow-xl" style={{ animationDelay: '0.3s' }}></div>
+              <div className="absolute -bottom-4 -left-6 w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full animate-bounce-3d shadow-xl" style={{ animationDelay: '0.6s' }}></div>
+              <div className="absolute -bottom-2 -right-4 w-7 h-7 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-full animate-bounce-3d shadow-xl" style={{ animationDelay: '0.9s' }}></div>
             </div>
           </div>
         </div>
