@@ -1,4 +1,6 @@
 
+import React from 'react';
+
 const ValueProposition = () => {
   return (
     <section className="py-20 bg-gradient-to-r from-primary to-accent text-white relative overflow-hidden">
