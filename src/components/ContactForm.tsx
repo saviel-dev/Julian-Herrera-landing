@@ -6,6 +6,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { Mail, Phone, MapPin, Send, MessageCircle } from 'lucide-react';
+import { supabase } from '@/integrations/supabase/client';
 
 interface FormData {
   nombre: string;
@@ -33,7 +34,7 @@ const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const whatsappNumber = ""; // Número proporcionado por el usuario
-  const contactEmail = ""; // Email proporcionado por el usuario
+  const contactEmail = "tu-email@ejemplo.com"; // Cambia esto por tu email real
 
   const validateField = (name: string, value: string): string => {
     switch (name) {
@@ -61,22 +62,16 @@ const ContactForm = () => {
     setErrors(prev => ({ ...prev, [name]: error }));
   };
 
-  const sendEmail = async (formData: FormData) => {
-    // Crear el cuerpo del email
-    const emailBody = `
-Nuevo mensaje de contacto desde la web:
+  const sendContactEmail = async (formData: FormData) => {
+    const { data, error } = await supabase.functions.invoke('send-contact-email', {
+      body: formData
+    });
 
-Nombre: ${formData.nombre}
-Email: ${formData.email}
-Teléfono: ${formData.telefono}
+    if (error) {
+      throw new Error(error.message || 'Error al enviar el email');
+    }
 
-Mensaje:
-${formData.mensaje}
-    `.trim();
-
-    // Usar mailto para abrir el cliente de correo
-    const mailtoLink = `mailto:${contactEmail}?subject=Nuevo mensaje de contacto - ${formData.nombre}&body=${encodeURIComponent(emailBody)}`;
-    window.location.href = mailtoLink;
+    return data;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -97,21 +92,23 @@ ${formData.mensaje}
     }
 
     try {
-      // Enviar email
-      await sendEmail(formData);
+      console.log('Enviando email con datos:', formData);
+      
+      await sendContactEmail(formData);
       
       toast({
         title: "¡Mensaje enviado con éxito!",
-        description: "Se ha abierto tu cliente de correo para enviar el mensaje.",
+        description: "Hemos recibido tu consulta y te responderemos pronto. También recibirás un email de confirmación.",
       });
       
       // Limpiar formulario
       setFormData({ nombre: '', email: '', telefono: '', mensaje: '' });
       setErrors({});
-    } catch (error) {
+    } catch (error: any) {
+      console.error('Error al enviar email:', error);
       toast({
         title: "Error al enviar",
-        description: "Por favor, intenta de nuevo más tarde.",
+        description: error.message || "Por favor, intenta de nuevo más tarde.",
         variant: "destructive",
       });
     } finally {
