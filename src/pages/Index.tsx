@@ -6,7 +6,6 @@ import ValueProposition from '@/components/ValueProposition';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import ProcessSection from '@/components/ProcessSection';
 import ContactForm from '@/components/ContactForm';
-import FinalCTA from '@/components/FinalCTA';
 import Footer from '@/components/Footer';
 import Navigation from '@/components/Navigation';
 
@@ -21,7 +20,6 @@ const Index = () => {
       <TestimonialsSection />
       <ProcessSection />
       <ContactForm />
-      <FinalCTA />
       <Footer />
     </div>
   );
