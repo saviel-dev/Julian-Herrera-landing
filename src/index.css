@@ -124,20 +124,173 @@
   
   /* Microsoft-style glass effect */
   .glass-nav {
-    background: rgba(15, 23, 42, 0.9);
-    backdrop-filter: blur(16px) saturate(180%);
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(20px) saturate(180%);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  
+  /* 3D Card Effects */
+  .card-3d {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+  
+  .card-3d:hover {
+    transform: translateY(-8px) rotateX(5deg) rotateY(5deg);
+    box-shadow: 
+      0 25px 50px rgba(0, 0, 0, 0.15),
+      0 0 0 1px rgba(255, 255, 255, 0.05);
+  }
+  
+  .icon-gradient-blue {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .icon-gradient-green {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .icon-gradient-purple {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .icon-gradient-orange {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .icon-3d {
+    filter: drop-shadow(2px 4px 8px rgba(0, 0, 0, 0.2));
+    transition: all 0.3s ease;
+  }
+  
+  .icon-3d:hover {
+    transform: translateY(-2px);
+    filter: drop-shadow(4px 8px 16px rgba(0, 0, 0, 0.3));
   }
 }
 
 /* Enhanced animations */
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+  0%, 100% { 
+    transform: translateY(0px); 
+  }
+  50% { 
+    transform: translateY(-10px); 
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes rotateIn {
+  0% {
+    opacity: 0;
+    transform: rotate(-15deg) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+@keyframes bounce3d {
+  0%, 20%, 53%, 80%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  40%, 43% {
+    transform: translate3d(0, -8px, 0);
+  }
+  70% {
+    transform: translate3d(0, -4px, 0);
+  }
+  90% {
+    transform: translate3d(0, -2px, 0);
+  }
 }
 
 .animate-float {
   animation: float 3s ease-in-out infinite;
+}
+
+.animate-slide-in-left {
+  animation: slideInFromLeft 0.8s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInFromRight 0.8s ease-out;
+}
+
+.animate-slide-in-bottom {
+  animation: slideInFromBottom 0.8s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.6s ease-out;
+}
+
+.animate-rotate-in {
+  animation: rotateIn 0.8s ease-out;
+}
+
+.animate-bounce-3d {
+  animation: bounce3d 1.2s ease-in-out;
 }
 
 /* Professional scroll behavior */
@@ -148,7 +301,7 @@ html {
 /* Enhanced focus states for accessibility - Microsoft style */
 button:focus-visible,
 a:focus-visible {
-  outline: 2px solid #3b82f6;
+  outline: 2px solid #2A5BDC;
   outline-offset: 2px;
   box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
 }
@@ -193,4 +346,14 @@ a:focus-visible {
   box-shadow: 
     0 14px 28px rgba(0, 0, 0, 0.25),
     0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+/* 3D perspective containers */
+.perspective-container {
+  perspective: 1000px;
+  perspective-origin: center center;
+}
+
+.transform-3d {
+  transform-style: preserve-3d;
 }
