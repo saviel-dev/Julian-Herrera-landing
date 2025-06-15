@@ -1,5 +1,4 @@
-
-import { ArrowRight, Play, CheckCircle2, Sparkles, Laptop, Video, Pause, Volume2, Maximize, SkipBack, SkipForward } from 'lucide-react';
+import { ArrowRight, Play, CheckCircle2, Sparkles, Laptop, Code, Database, Cpu, Zap, Globe, Wifi, Monitor } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const HeroSection = () => {
@@ -82,97 +81,134 @@ const HeroSection = () => {
             </div>
           </div>
           
-          {/* Video Player Screen */}
+          {/* Innovation & Tech Dashboard */}
           <div className="relative animate-slide-in-right perspective-container">
             <div className="relative transform-3d">
               {/* Background glow effects */}
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/40 to-purple-500/40 rounded-[2rem] blur-3xl transform rotate-3 animate-float scale-110"></div>
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/30 to-indigo-500/30 rounded-[2rem] blur-2xl transform -rotate-2 animate-float scale-105" style={{ animationDelay: '0.5s' }}></div>
               
-              {/* Video Player Container */}
+              {/* Tech Dashboard Container */}
               <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-[2rem] shadow-2xl p-3 z-10 card-3d hover:scale-105 transition-all duration-700 border border-slate-700/50">
-                {/* Video Screen */}
+                {/* Dashboard Screen */}
                 <div className="bg-black rounded-2xl p-1 shadow-inner relative overflow-hidden">
-                  {/* Video Content Area */}
-                  <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-black rounded-xl relative aspect-video overflow-hidden">
-                    {/* Video Background with thumbnail effect */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-900/50 via-purple-900/50 to-slate-900">
-                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_40%,_rgba(0,0,0,0.3)_80%)]"></div>
-                      
-                      {/* Simulated video thumbnail */}
-                      <div className="absolute inset-4 bg-gradient-to-br from-blue-800/30 to-purple-800/30 rounded-lg overflow-hidden">
-                        <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-                        <div className="absolute top-4 left-4 w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg opacity-20"></div>
-                        <div className="absolute top-4 right-4 w-12 h-12 bg-gradient-to-br from-green-500 to-cyan-500 rounded-full opacity-20"></div>
-                        <div className="absolute bottom-4 left-4 w-20 h-8 bg-gradient-to-r from-yellow-500 to-orange-500 rounded opacity-20"></div>
-                      </div>
+                  {/* Dashboard Content Area */}
+                  <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-black rounded-xl relative aspect-video overflow-hidden p-6">
+                    {/* Tech Dashboard Background */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-slate-900">
+                      <div className="absolute inset-0 bg-grid-pattern opacity-20"></div>
                     </div>
                     
-                    {/* Central Play Button with enhanced design */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="relative group cursor-pointer">
-                        <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-red-600 rounded-full blur-xl opacity-60 animate-pulse group-hover:opacity-80 transition-opacity scale-150"></div>
-                        <div className="relative bg-gradient-to-br from-red-500 via-red-600 to-red-700 rounded-full p-6 shadow-2xl group-hover:scale-110 transition-transform">
-                          <Play className="h-12 w-12 text-white ml-1" fill="white" />
+                    {/* Dashboard Header */}
+                    <div className="relative z-10 mb-4">
+                      <div className="flex items-center justify-between mb-4">
+                        <div className="flex items-center gap-3">
+                          <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                          <h3 className="text-white font-semibold text-lg">Innovation Dashboard</h3>
+                        </div>
+                        <div className="flex gap-2">
+                          <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                          <div className="w-3 h-3 bg-red-500 rounded-full"></div>
                         </div>
                       </div>
                     </div>
                     
-                    {/* Video Player Controls Overlay */}
-                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4">
-                      {/* Progress Bar */}
-                      <div className="mb-3">
-                        <div className="h-1.5 bg-white/20 rounded-full overflow-hidden">
-                          <div className="h-full bg-gradient-to-r from-red-500 to-red-600 rounded-full w-1/3 relative">
-                            <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-3 h-3 bg-red-500 rounded-full shadow-lg"></div>
-                          </div>
+                    {/* Main Content Grid */}
+                    <div className="relative z-10 grid grid-cols-2 gap-4 h-full">
+                      {/* Code Editor Section */}
+                      <div className="bg-slate-800/50 rounded-lg p-3 backdrop-blur-sm border border-slate-700/50">
+                        <div className="flex items-center gap-2 mb-3">
+                          <Code className="h-4 w-4 text-blue-400" />
+                          <span className="text-white text-xs font-medium">Code Editor</span>
                         </div>
-                        <div className="flex justify-between text-xs text-white/70 mt-1">
-                          <span>2:45</span>
-                          <span>8:30</span>
-                        </div>
-                      </div>
-                      
-                      {/* Control Buttons */}
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-3">
-                          <SkipBack className="h-5 w-5 text-white/80 hover:text-white cursor-pointer transition-colors" />
-                          <div className="bg-white/20 backdrop-blur-sm rounded-full p-2 hover:bg-white/30 transition-colors cursor-pointer">
-                            <Pause className="h-4 w-4 text-white" />
-                          </div>
-                          <SkipForward className="h-5 w-5 text-white/80 hover:text-white cursor-pointer transition-colors" />
-                        </div>
-                        
-                        <div className="flex items-center gap-3">
+                        <div className="space-y-2">
                           <div className="flex items-center gap-2">
-                            <Volume2 className="h-4 w-4 text-white/80" />
-                            <div className="w-16 h-1 bg-white/20 rounded-full">
-                              <div className="w-3/4 h-full bg-white rounded-full"></div>
-                            </div>
+                            <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
+                            <div className="h-1 bg-purple-400/60 rounded flex-1"></div>
                           </div>
-                          <Maximize className="h-4 w-4 text-white/80 hover:text-white cursor-pointer transition-colors" />
+                          <div className="flex items-center gap-2">
+                            <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                            <div className="h-1 bg-green-400/60 rounded flex-1"></div>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                            <div className="h-1 bg-blue-400/60 rounded w-3/4"></div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      {/* System Monitor */}
+                      <div className="bg-slate-800/50 rounded-lg p-3 backdrop-blur-sm border border-slate-700/50">
+                        <div className="flex items-center gap-2 mb-3">
+                          <Cpu className="h-4 w-4 text-green-400" />
+                          <span className="text-white text-xs font-medium">Performance</span>
+                        </div>
+                        <div className="space-y-2">
+                          <div className="flex justify-between items-center">
+                            <span className="text-xs text-slate-400">CPU</span>
+                            <span className="text-xs text-green-400">85%</span>
+                          </div>
+                          <div className="w-full bg-slate-700 rounded-full h-1">
+                            <div className="bg-gradient-to-r from-green-400 to-emerald-500 h-1 rounded-full w-4/5"></div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      {/* Database Status */}
+                      <div className="bg-slate-800/50 rounded-lg p-3 backdrop-blur-sm border border-slate-700/50">
+                        <div className="flex items-center gap-2 mb-3">
+                          <Database className="h-4 w-4 text-cyan-400" />
+                          <span className="text-white text-xs font-medium">Database</span>
+                        </div>
+                        <div className="flex items-center justify-center">
+                          <div className="relative">
+                            <div className="w-8 h-8 border-2 border-cyan-400/30 rounded-full"></div>
+                            <div className="absolute inset-0 w-8 h-8 border-2 border-cyan-400 rounded-full border-t-transparent animate-spin"></div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      {/* Network Status */}
+                      <div className="bg-slate-800/50 rounded-lg p-3 backdrop-blur-sm border border-slate-700/50">
+                        <div className="flex items-center gap-2 mb-3">
+                          <Globe className="h-4 w-4 text-orange-400" />
+                          <span className="text-white text-xs font-medium">Network</span>
+                        </div>
+                        <div className="flex items-center justify-between">
+                          <Wifi className="h-6 w-6 text-orange-400" />
+                          <div className="flex gap-1">
+                            <div className="w-1 h-3 bg-orange-400 rounded"></div>
+                            <div className="w-1 h-4 bg-orange-400 rounded"></div>
+                            <div className="w-1 h-2 bg-orange-400/50 rounded"></div>
+                          </div>
                         </div>
                       </div>
                     </div>
                     
-                    {/* Video Title Overlay */}
-                    <div className="absolute top-4 left-4 right-4">
-                      <div className="bg-black/60 backdrop-blur-sm rounded-lg p-3">
-                        <h3 className="text-white font-semibold text-sm">Demo de Desarrollo Web</h3>
-                        <p className="text-white/70 text-xs">Soluciones tecnológicas profesionales</p>
-                      </div>
+                    {/* Floating Tech Elements */}
+                    <div className="absolute top-4 right-4">
+                      <Zap className="h-6 w-6 text-yellow-400 animate-pulse" />
+                    </div>
+                    <div className="absolute bottom-4 left-4">
+                      <Monitor className="h-5 w-5 text-purple-400" />
                     </div>
                   </div>
                 </div>
               </div>
               
-              {/* Floating UI elements around the video player */}
-              <div className="absolute -top-4 -left-4 w-8 h-8 bg-gradient-to-br from-red-500 to-red-600 rounded-full animate-bounce-3d shadow-xl flex items-center justify-center">
-                <Video className="h-4 w-4 text-white" />
+              {/* Floating Tech Icons around the dashboard */}
+              <div className="absolute -top-4 -left-4 w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full animate-bounce-3d shadow-xl flex items-center justify-center">
+                <Code className="h-4 w-4 text-white" />
               </div>
-              <div className="absolute -top-2 -right-6 w-6 h-6 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full animate-bounce-3d shadow-xl" style={{ animationDelay: '0.3s' }}></div>
-              <div className="absolute -bottom-4 -left-6 w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full animate-bounce-3d shadow-xl" style={{ animationDelay: '0.6s' }}></div>
-              <div className="absolute -bottom-2 -right-4 w-7 h-7 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-full animate-bounce-3d shadow-xl" style={{ animationDelay: '0.9s' }}></div>
+              <div className="absolute -top-2 -right-6 w-6 h-6 bg-gradient-to-br from-green-500 to-green-600 rounded-full animate-bounce-3d shadow-xl" style={{ animationDelay: '0.3s' }}>
+                <Database className="h-3 w-3 text-white m-auto mt-1.5" />
+              </div>
+              <div className="absolute -bottom-4 -left-6 w-10 h-10 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-full animate-bounce-3d shadow-xl flex items-center justify-center" style={{ animationDelay: '0.6s' }}>
+                <Cpu className="h-5 w-5 text-white" />
+              </div>
+              <div className="absolute -bottom-2 -right-4 w-7 h-7 bg-gradient-to-br from-orange-500 to-red-500 rounded-full animate-bounce-3d shadow-xl flex items-center justify-center" style={{ animationDelay: '0.9s' }}>
+                <Globe className="h-4 w-4 text-white" />
+              </div>
             </div>
           </div>
         </div>
