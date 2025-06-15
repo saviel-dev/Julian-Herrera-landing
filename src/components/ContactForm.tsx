@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, MessageCircle } from 'lucide-react';
 
 interface FormData {
   nombre: string;
@@ -31,6 +31,9 @@ const ContactForm = () => {
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const whatsappNumber = ""; // Número proporcionado por el usuario
+  const contactEmail = ""; // Email proporcionado por el usuario
 
   const validateField = (name: string, value: string): string => {
     switch (name) {
@@ -58,6 +61,24 @@ const ContactForm = () => {
     setErrors(prev => ({ ...prev, [name]: error }));
   };
 
+  const sendEmail = async (formData: FormData) => {
+    // Crear el cuerpo del email
+    const emailBody = `
+Nuevo mensaje de contacto desde la web:
+
+Nombre: ${formData.nombre}
+Email: ${formData.email}
+Teléfono: ${formData.telefono}
+
+Mensaje:
+${formData.mensaje}
+    `.trim();
+
+    // Usar mailto para abrir el cliente de correo
+    const mailtoLink = `mailto:${contactEmail}?subject=Nuevo mensaje de contacto - ${formData.nombre}&body=${encodeURIComponent(emailBody)}`;
+    window.location.href = mailtoLink;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -75,13 +96,13 @@ const ContactForm = () => {
       return;
     }
 
-    // Simular envío del formulario
     try {
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      // Enviar email
+      await sendEmail(formData);
       
       toast({
         title: "¡Mensaje enviado con éxito!",
-        description: "Nos pondremos en contacto contigo pronto.",
+        description: "Se ha abierto tu cliente de correo para enviar el mensaje.",
       });
       
       // Limpiar formulario
@@ -96,6 +117,12 @@ const ContactForm = () => {
     } finally {
       setIsSubmitting(false);
     }
+  };
+
+  const handleWhatsAppClick = () => {
+    const message = encodeURIComponent(`¡Hola! Soy ${formData.nombre || 'un visitante de su web'}. Me interesa conocer más sobre sus servicios de desarrollo web.`);
+    const url = `https://wa.me/${whatsappNumber}?text=${message}`;
+    window.open(url, '_blank');
   };
 
   return (
@@ -125,7 +152,7 @@ const ContactForm = () => {
                   </div>
                   <div>
                     <div className="font-medium text-gray-900">Email</div>
-                    <div className="text-gray-600">contacto@mytec.com</div>
+                    <div className="text-gray-600">{contactEmail}</div>
                   </div>
                 </div>
                 
@@ -136,6 +163,21 @@ const ContactForm = () => {
                   <div>
                     <div className="font-medium text-gray-900">Teléfono</div>
                     <div className="text-gray-600">+1 (555) 123-4567</div>
+                  </div>
+                </div>
+
+                <div className="flex items-center">
+                  <div className="w-12 h-12 bg-green-500/10 rounded-full flex items-center justify-center mr-4">
+                    <MessageCircle className="h-6 w-6 text-green-500" />
+                  </div>
+                  <div>
+                    <div className="font-medium text-gray-900">WhatsApp</div>
+                    <button
+                      onClick={handleWhatsAppClick}
+                      className="text-green-500 hover:text-green-600 transition-colors duration-200"
+                    >
+                      Enviar mensaje
+                    </button>
                   </div>
                 </div>
                 

@@ -8,6 +8,7 @@ import ProcessSection from '@/components/ProcessSection';
 import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/Footer';
 import Navigation from '@/components/Navigation';
+import WhatsAppButton from '@/components/WhatsAppButton';
 
 const Index = () => {
   return (
@@ -21,6 +22,7 @@ const Index = () => {
       <ProcessSection />
       <ContactForm />
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 };
